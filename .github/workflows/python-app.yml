@@ -15,11 +15,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - shell: bash
-      env:
-        SECRET_ID: ${{ secrets.SECRET_ID }}
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        SECRET_BUCKET: ${{ secrets.SECRET_BUCKET }}
     - uses: actions/checkout@v2
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
@@ -30,6 +25,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install coscmd
     - name: Setup config
+    - shell: bash
+      env:
+        SECRET_ID: ${{ secrets.SECRET_ID }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        SECRET_BUCKET: ${{ secrets.SECRET_BUCKET }}
       run: |
         coscmd config -a "$SECRET_ID" -s SECRET_KEY -b SECRET_BUCKET -e cos.accelerate.myqcloud.com
     - name: Upload
