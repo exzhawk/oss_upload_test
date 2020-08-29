@@ -34,4 +34,4 @@ jobs:
     - name: Upload
       run: |
         wget https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/download/Snapshot-20200829032955/Minecraft-Mod-Language-Package.zip 
-        coscmd upload Minecraft-Mod-Language-Package.zip Minecraft-Mod-Language-Package.zip
+        time coscmd upload Minecraft-Mod-Language-Package.zip Minecraft-Mod-Language-Package.zip
