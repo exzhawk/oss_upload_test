@@ -30,7 +30,7 @@ jobs:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
         SECRET_BUCKET: ${{ secrets.SECRET_BUCKET }}
       run: |
-        coscmd config -a "$SECRET_ID" -s SECRET_KEY -b SECRET_BUCKET -e cos.accelerate.myqcloud.com
+        coscmd config -a "$SECRET_ID" -s "$SECRET_KEY" -b "$SECRET_BUCKET" -e cos.accelerate.myqcloud.com
     - name: Upload
       run: |
         wget https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/download/Snapshot-20200829032955/Minecraft-Mod-Language-Package.zip 
